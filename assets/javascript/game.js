@@ -18,21 +18,25 @@ var hiddenWord=[];
 //Get the letter that user enters
 console.log (randomWord);
 
+//display the number of letters
 for(i=0; i<randomWord.length;i++){
 	hiddenWord.push("_");
 }
 
 console.log(hiddenWord);
 
-function checkLetter(x,y){
-	x.indexOf(y);
-}
+
+document.getElementById("hidden-word").innerHTML = "Hidden Word: " + hiddenWord.join(' ');
+
+document.getElementById("number-of-tries").innerHTML = "Tries Left: " + numTries;
+document.getElementById("wrong-guess").innerHTML = "Wrong Guess: " + guessWrong;
 
 document.onkeyup = function (event){
 
 
 	var userGuess = event.key;
-//check if the letter entered already tried 
+//check if the letter entered already tried
+
 
 	if( (alreadyTried.length !== 0) && (alreadyTried.indexOf(userGuess) > -1)){
 		alert("Enter a letter you have not tried :)")
@@ -44,7 +48,7 @@ document.onkeyup = function (event){
 		numTries--;
 		alreadyTried.push(userGuess);
 		guessWrong.push(userGuess);
-		console.log(numTries);
+		console.log("Tries Left: " + numTries);
 		console.log("Wrong Guess: " + guessWrong); 
 	}
 //check if the letter entered is in random word
@@ -52,7 +56,8 @@ document.onkeyup = function (event){
 		guessCorrect.push(userGuess);
 		alreadyTried.push(userGuess);
 		console.log("Correct Guess: " + guessCorrect);
-//Check all letters of the word for letter guessed by user
+
+//Check all letters of the word for letter guessed by user and reveal correct letter
 		for (i=0;i<randomWord.length;i++){
 			if(randomWord[i] === userGuess){
 				hiddenWord[i] = userGuess;
@@ -60,16 +65,13 @@ document.onkeyup = function (event){
 			}
 		}
 	}
+
+	document.getElementById("hidden-word").innerHTML = "Hidden Word: " + hiddenWord.join(" ");
+	document.getElementById("number-of-tries").innerHTML = "Tries Left: " + numTries;
+	document.getElementById("wrong-guess").innerHTML = "Wrong Guess: " + guessWrong.join(", ");
+
+	
 }
-
-
-
-
-
-
-
-//Check if the letter user entered is in random word
-
 
 
 
