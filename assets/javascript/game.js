@@ -3,8 +3,10 @@
 //bank of random words
 var wordBank = ["rough","political","trouble","listen","crazy","adjustment","faithful","horrible","classy","different","swing","unwritten","plan","burn","soggy","tart","add","crash","cough","lazy","kaput","fat","deranged","naughty","measure","explode","form","mouth","adjoining","accurate"]
 
+var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-var numTries = 20;
+
+var numTries = 3;
 
 //selects random word
 var randomWord = wordBank [Math.floor(Math.random()*wordBank.length)];
@@ -25,7 +27,6 @@ for(i=0; i<randomWord.length;i++){
 
 console.log(hiddenWord);
 
-
 document.getElementById("hidden-word").innerHTML = "Hidden Word: " + hiddenWord.join(' ');
 
 document.getElementById("number-of-tries").innerHTML = "Tries Left: " + numTries;
@@ -35,10 +36,14 @@ document.onkeyup = function (event){
 
 
 	var userGuess = event.key;
+
+	if(letters.indexOf(userGuess)===-1){
+		alert("Please Enter Letter");
+	}
+
 //check if the letter entered already tried
 
-
-	if( (alreadyTried.length !== 0) && (alreadyTried.indexOf(userGuess) > -1)){
+	else if( (alreadyTried.length !== 0) && (alreadyTried.indexOf(userGuess) > -1)){
 		alert("Enter a letter you have not tried :)")
 		console.log("Already Tried Letter: " + alreadyTried);
 	}
@@ -61,14 +66,34 @@ document.onkeyup = function (event){
 		for (i=0;i<randomWord.length;i++){
 			if(randomWord[i] === userGuess){
 				hiddenWord[i] = userGuess;
-				console.log(hiddenWord)
+				console.log(hiddenWord);
 			}
 		}
 	}
+	
+
+	if (numTries === 0){
+		var playAgain = confirm("You have failed, want to try again?");
+		console.log(playAgain);
+		
+		if(playAgain === true){
+			location.reload();
+		}
+	}
+	
 
 	document.getElementById("hidden-word").innerHTML = "Hidden Word: " + hiddenWord.join(" ");
 	document.getElementById("number-of-tries").innerHTML = "Tries Left: " + numTries;
 	document.getElementById("wrong-guess").innerHTML = "Wrong Guess: " + guessWrong.join(", ");
+
+	if (hiddenWord.join("") === randomWord) {
+		var congrats = confirm("You got it! Want to try again?");
+		console.log(congrats);
+
+		if(congrats === true){
+			location.reload();
+		}
+	}
 
 	
 }

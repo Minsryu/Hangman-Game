@@ -3,16 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	
 </head>
 <body>
-	<p id="hidden-word">Hidden Word: </p>
+	
+	<div class="container">
 
-	<hr>
+		<div class="container-mask">
 
-	<p id="number-of-tries">Tries Left: </p>
+			<div id="masked-image">
+				<h1>Save Hang Man
+				<br><span id="sub-title">Guess the hidden word by entering letters on keyboard. Once tries left reaches 0 You are doooooooomed</span></h1>
+			
+			</div>
 
-	<p id="wrong-guess">Wrong Guess: </p>
+		</div>
+
+		<div>
+
+		<p id="hidden-word">Hidden Word: </p>
+
+		</div>
+
+		<hr>
+
+		<p id="number-of-tries">Tries Left: </p>
+
+		<p id="wrong-guess">Wrong Guess: </p>
+
+
+	</div>
 	
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

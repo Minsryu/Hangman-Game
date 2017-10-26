@@ -1,0 +1,64 @@
+*{
+	box-sizing: border-box;
+	margin: 0px auto;
+}
+body{
+	background-color: black;
+}
+.container {
+	max-width: 960px;
+	height:600px;
+	margin: 0 auto;
+	background-color:white;
+}
+
+.container-mask {
+    width: 960px;
+    margin: 0 auto;
+    /*background: url(../images/background.jpg);*/
+    background-color: black;
+    padding: 60px;
+}
+
+#masked-image h1 {
+    font-family: Oswald, sans-serif;
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    border: 14px solid #fff;
+    border-radius: .2em;
+    text-align: center;
+    margin: 0;
+    display: block;
+    -webkit-mask-image: url(../images/rough-texture.png);
+    -webkit-transform: rotate(-4deg);
+    -moz-mask-image: url(../images/rough-texture.png);
+    -moz-transform: rotate(-4deg);
+    -o-mask-image: url(../images/rough-texture.png);
+    -o-transform: rotate(-4deg);
+    mask-image: url(../images/rough-texture.png);
+    transform: rotate(-4deg);
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+#masked-image h1:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+#sub-title {
+    font-family: Oswald, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    display: block;
+    padding-bottom:30px;
+}
