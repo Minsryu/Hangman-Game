@@ -6,7 +6,7 @@ var wordBank = ["rough","political","trouble","listen","crazy","adjustment","fai
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 
-var numTries = 3;
+var numTries = 15;
 
 //selects random word
 var randomWord = wordBank [Math.floor(Math.random()*wordBank.length)];
